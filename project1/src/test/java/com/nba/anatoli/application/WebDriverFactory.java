@@ -56,6 +56,7 @@ class WebDriverFactory {
             driver.manage().window().maximize();
         }
         Set<Cookie> cookies = driver.manage().getCookies();
+        cookies.forEach(System.out::println);
         return driver;
     }
 }
