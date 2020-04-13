@@ -1,8 +1,10 @@
 package com.nba.anatoli.application;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 
@@ -26,9 +28,15 @@ class WebDriverFactory {
         return new InternetExplorerDriver(ieOptions);
     };
 
+    private static final Supplier<WebDriver> edgeSupplier = () -> {
+        WebDriverManager.edgedriver().setup();
+        return new EdgeDriver();
+    };
+
     static {
         browserMap.put("chrome", chromeSupplier);
         browserMap.put("internet explorer", ieSupplier);
+        browserMap.put("edge", edgeSupplier);
     }
 
     static synchronized WebDriver create(String browser) {
