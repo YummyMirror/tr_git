@@ -1,4 +1,0 @@
-Hello World!
-Git is awesome
-Some changes
-One more changes
