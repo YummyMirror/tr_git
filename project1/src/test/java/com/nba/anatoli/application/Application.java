@@ -10,6 +10,7 @@ public class Application {
     private WebDriver wd;
     private GooglePO googlePO;
     private Navigator navigator;
+    private YandexPO yandexPO;
 
     public void init(String browser) {
         wd = create(browser);
@@ -34,5 +35,12 @@ public class Application {
             navigator = new Navigator(wd);
         }
         return navigator;
+    }
+    
+    public YandexPO yandex() {
+        if (yandexPO == null) {
+            yandexPO = new YandexPO(wd);
+        }
+        return yandexPO;
     }
 }
