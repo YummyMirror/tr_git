@@ -1,6 +1,7 @@
 package com.nba.anatoli.application;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +12,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Supplier;
 
 class WebDriverFactory {
@@ -53,6 +55,7 @@ class WebDriverFactory {
         if (driver instanceof InternetExplorerDriver) {
             driver.manage().window().maximize();
         }
+        Set<Cookie> cookies = driver.manage().getCookies();
         return driver;
     }
 }
