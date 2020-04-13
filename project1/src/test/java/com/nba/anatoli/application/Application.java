@@ -2,6 +2,7 @@ package com.nba.anatoli.application;
 
 import com.nba.anatoli.page.GooglePO;
 import com.nba.anatoli.page.Navigator;
+import com.nba.anatoli.page.YandexPO;
 import org.openqa.selenium.WebDriver;
 
 import static com.nba.anatoli.application.WebDriverFactory.create;
@@ -36,7 +37,7 @@ public class Application {
         }
         return navigator;
     }
-    
+
     public YandexPO yandex() {
         if (yandexPO == null) {
             yandexPO = new YandexPO(wd);
