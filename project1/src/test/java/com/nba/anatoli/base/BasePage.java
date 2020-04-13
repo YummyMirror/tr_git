@@ -50,4 +50,8 @@ public class BasePage {
                .build()
                .perform();
     }
+
+    protected boolean isElementPresent(By locator) {
+        return wd.findElements(locator).size() > 0;
+    }
 }
