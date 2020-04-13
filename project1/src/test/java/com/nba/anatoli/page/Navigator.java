@@ -11,4 +11,8 @@ public class Navigator extends BasePage {
     public void google() {
         open("https://www.google.by/");
     }
+    
+    public void yandex() {
+        open("https://yandex.by/");
+    }
 }
